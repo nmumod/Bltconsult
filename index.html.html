@@ -1,0 +1,444 @@
+<html lang="en">
+
+<head>
+    <title>BLT CONSULT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fafafa;
+            margin: 0;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: rgb(105, 143, 214);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .navbar {
+            list-style: none;
+            margin: 0;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            padding: 8px 12px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        /* Unique Hover Effect */
+        nav a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: rgb(16, 243, 224);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: rgb(100, 243, 253);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .navbar .logo img {
+            height: 50px;
+            padding: 10px;
+            border-radius: 55px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+        }
+
+        .f {
+            padding: 35px;
+            text-align: center;
+        }
+
+        .heading1 {
+            font-size: 1.2rem;
+            color: #141414;
+        }
+
+        .heading2,
+        .lead,
+        h3,
+        h2 {
+            text-align: center;
+        }
+
+        h2 {
+            color: #007BFF;
+            font-size: 2rem;
+        }
+
+        .About {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .about-par {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Cards Layout */
+        .Services-card1,
+        .Services-card2,
+        .Project-cards,
+        .Project-cards2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .card1,
+        .card2,
+        .card3,
+        .card4,
+        .card5,
+        .card6,
+        .Projectcard1 {
+            background: #f9f9f9;
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            width: 250px;
+            height: auto;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card1:hover,
+        .card2:hover,
+        .card3:hover,
+        .card4:hover,
+        .card5:hover,
+        .card6:hover,
+        .Projectcard1:hover {
+            transform: translateY(-5px);
+        }
+
+        .card1 img,
+        .card2 img,
+        .card3 img,
+        .card4 img,
+        .card5 img,
+        .card6 img,
+        .Projectcard1 img {
+            border-radius: 6px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .parr {
+            font-size: 16px;
+            color: #0894d4;
+            font-weight: bold;
+        }
+
+        section {
+            width: 70%;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Buttons */
+        .Contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #007BFF;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        button a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+        }
+
+        footer {
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 15px;
+            color: #141414;
+            background: #6d8a8a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            section {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .Services-card1,
+            .Services-card2,
+            .Project-cards,
+            .Project-cards2 {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+
+            .card1,
+            .card2,
+            .card3,
+            .card4,
+            .card5,
+            .card6,
+            .Projectcard1 {
+                width: 90%;
+                max-width: 400px;
+            }
+
+            .navbar ul {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .navbar {
+             
+                flex-direction: row-reverse;
+                height: auto;
+                padding: 15px;
+                
+            }
+
+            .navbar .logo img {
+                padding: 5px;
+                position: sticky;
+                
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="LOGO.jpg" alt="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="#About-section">About</a></li>
+                    <li><a href="#Services-section">Services</a></li>
+                    <li><a href="#Projects-section">Projects</a></li>
+                    <li><a href="#Contacts-section">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="About-section">
+        <div class="Introduction">
+            <div class="hero">
+                <h1>Building Your Vision</h1>
+                <p class="heading1">Professional, Reliable Construction and Civil Services</p>
+            </div>
+            <div class="f">
+                <h2>Who we Are</h2>
+                <p class="heading1">
+                    We are design and build company that undertakes civil and construction projects upholding Scope,
+                    Time, Cost and Quality to clients satisfaction.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Services-section">
+        <h2>Services</h2>
+        <p class="heading2">We offer the following services</p>
+        <div class="Services-card1">
+            <div class="card1">
+                <p class="parr">Construction Project Management</p>
+                <img src="conproj.jpg" alt="Construction Project">
+                <p>We handle the planning, coordination, and execution of construction projects to ensure delivery on
+                    time and within budget.</p>
+            </div>
+            <div class="card2">
+                <p class="parr">Civil Works</p>
+                <img src="Civilw.jpg" alt="Civil Works">
+                <p>We specialize in a wide range of civil works from road works to structural foundations.</p>
+            </div>
+            <div class="card3">
+                <p class="parr">Property Management</p>
+                <img src="Propmann.jpg" alt="Property Management">
+                <p>We ensure your residential and commercial properties are well maintained, occupied and profitable.
+                </p>
+            </div>
+        </div>
+        <div class="Services-card2">
+            <div class="card4">
+                <p class="parr">Maintenance and Renovation</p>
+                <img src="Renov.jpg" alt="Renovation">
+                <p>We do fresh upgrades, repair works and breathe new life into old spaces while maintaining safety and
+                    design standards.</p>
+            </div>
+            <div class="card6">
+                <p class="parr">Landscaping</p>
+                <img src="Landsc.jpg" alt="Landscaping">
+                <p>We transform outdoor spaces into beautiful, functional environments through creative landscaping
+                    solutions.</p>
+            </div>
+            <div class="card5">
+                <p class="parr">Interior Design</p>
+                <img src="Intdes.jpg" alt="Interior Design">
+                <p>We design functional aesthetic interior spaces that reflect your taste, brand and lifestyle.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Projects-section">
+        <h2>Projects</h2>
+        <p class="lead">Our Previous projects</p>
+        <div class="Project-cards">
+            <div class="Projectcard1">
+                <p class="parr">Apex Apartments</p>
+                <img src="k.png" alt="Apex Apartments">
+                <p>Spacious</p>
+                <p>Modern kitchenette</p>
+                <p>Private Bathroom</p>
+            </div>
+            <div class="Projectcard1">
+                <p class="parr">Greggs Flats</p>
+                <img src="Bedsitter.png" alt="Greggs Flats">
+                <p>Spacious bedsitters</p>
+                <p>Modern kitchenette</p>
+                <p>Private Bathroom</p>
+            </div>
+            <div class="Projectcard1">
+                <p class="parr">3 Bedroom Hidden Roof</p>
+                <img src="g.jpg" alt="Hidden Roof">
+                <p>Office/Study room</p>
+                <p>Entry porch / Lounge</p>
+                <p>Ensuite master bedroom</p>
+            </div>
+        </div>
+        <div class="Project-cards2">
+            <div class="Projectcard1">
+                <p class="parr">Four Bedroom Maisonette</p>
+                <img src="Image4_000.png" alt="Maisonette">
+                <p>Office/Study room</p>
+                <p>Lounge/ Guest bedroom</p>
+                <p>Ensuite master bedroom</p>
+            </div>
+            <div class="Projectcard1">
+                <p class="parr">Three Bedroom Bungalow</p>
+                <img src="Image2.png" alt="Bungalow">
+                <p>Entry porch / Lounge</p>
+                <p>Ensuite master bedroom</p>
+                <p>Office/Study room/Rear porch</p>
+            </div>
+            <div class="Projectcard1">
+                <p class="parr">Modern 3 Bedroom Maisonette</p>
+                <img src="w.png" alt="Modern Maisonette">
+                <p>Lounge/ Bar area</p>
+                <p>Ensuite master bedroom</p>
+                <p>Office/Study room</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Contacts-section">
+        <h2>Contact</h2>
+        <div class="Contacts">
+            <button>
+                <a href="https://wa.me/0739233404" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </button>
+            <button>
+                <a href="mailto:burlingtonconsultantske@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+            </button>
+            <button>
+                <a href="" target="_blank" rel="noopener noreferrer">X</a>
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        &copy; BLT2025
+    </footer>
+</body>
+
+</html>
